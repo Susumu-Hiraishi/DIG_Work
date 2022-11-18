@@ -90,6 +90,47 @@ function validCredentials(username,password){
 }
 validCredentials("Susumu Hiraishi","password")
 
+//ここから　応用演習
+console.log("")
+console.log("ここから応用演習")
+//1
+function isEven1(num){
+    let surplus = num / 2;
+    let judge = surplus - Math.floor(surplus);
+    console.log("判定=",judge)
+    return judge === 0;
+}
+console.log(isEven1(25));
+//2
+function getGreaterValue(num1,num2){
+    if (num1>num2){
+        return num1;
+    }else{
+        return num2;
+    }
+}
+console.log(getGreaterValue(10, 15)); // 15 を表示
+console.log(getGreaterValue(15, 10)); // 15 を表示
+//3
+
+function getGreatestValue(){
+    let judge = 0
+    for(let i = 0; i < arguments.length; ++i){ // 関数実行時に引数として渡されたものは『arguments』で参照できます。
+        console.log("仮引数=",arguments[i]);
+        if (judge < arguments[i]){
+            judge = arguments[i]
+        }
+    } 
+    return judge
+}
+
+console.log("== 応用３ ==")
+console.log(getGreatestValue(10, 15)); // 15 を表示
+console.log(getGreatestValue(15, 10)); // 15 を表示
+console.log(getGreatestValue(1, 2, 3, 4, 5)); // 5 を表示
+console.log(getGreatestValue(1, 10, 3, 4, 5)); // 10 を表示
+
+
 //ここから　ナイトメア
 console.log("")
 console.log("ここからナイトメア")

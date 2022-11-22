@@ -5,31 +5,66 @@
 let expected;
 let actual;
 
-// テストする対象のコード
-function add(a, b) {
-  return a + b;
-}
+//JSDoc
+// /**
+//  * @param {number} num1 - 1 番目の数字
+//  * @param {number} num2 - 2 番目の数字
+//  * @returns {"X は Y と等しい" | "X は Y より小さい" | "X は Y より大きい"} 与えられた 2 つの数字の比較結果
+//  */
 
-expected = 5; // EXPRESSION（式）の期待値
-actual = add(3, 2); // テストを行う EXPRESSION（式）
+// ここからテスト
+// actual = ();
+// expected = ;
+
+// if (actual === expected) {
+//   console.log("Yay! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Keep trying!");
+//   console.log("    actual: ", actual);
+//   console.log("  expected: ", expected);
+// }
+
+// function weather(temp){
+//   if (temp > 20 && temp < 26){
+//     return "It's comfortable!";
+//   }
+//   if (temp < 20 || temp > 26){
+//     return "It's too hot or cold!";
+//   }
+// }
+// console.log(weather(22));
+
+
+/**
+ * @param {number} ??? - 年齢
+ * @returns {boolean} 与えられた年齢がティーンエイジャー（13 歳から 19 歳までの間：「thirTEEN」から「nineTEEN」）かどうか
+ */
+function isTeenager(age) {
+  // ここにコードを書きましょう.
+  return age >= 13 && age <= 19;
+
+}
+actual = isTeenager(3);
+expected = false;
 
 if (actual === expected) {
-  console.log("Test PASSED!");
+  console.log("Yay! Test PASSED.");
 } else {
   console.error("Test FAILED. Keep trying!");
-  console.group("Result:");
-  console.log("  actual:", actual);
-  console.log("expected:", expected);
-  console.groupEnd();
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = isTeenager(14);
+expected = true;
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
 }
 
 
-function SayHello(name){
-    if (name.length > 0){
-        return `Hello, ${name}!`
-    }
-}
-    
-const Person = "Beau";
-const greeting = SayHello(Person);
-
+    // さらにテストを書いて、コードが正しいことを確認してください。

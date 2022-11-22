@@ -519,11 +519,6 @@ if (actual === expected) {
   console.groupEnd();
 }
 
-//ここから　ナイトメア
-console.log("")
-console.log("ここからナイトメア")
-
-
 
 
 

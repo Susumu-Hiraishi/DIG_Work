@@ -2,8 +2,8 @@
 // 1行目に記載している 'use strict' は削除しないでください
 // ファイル全体で使用する TDD 用の変数を宣言する
 //  Test-driven Development[TDD]
-let expected;   //期待値
 let actual;     //実際値
+let expected;   //期待値
 
 
 //ウォーミングアップ

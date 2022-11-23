@@ -72,11 +72,16 @@ console.log("＝ここから、基礎演習＝");
 //1.
 console.log("基礎１");
  /**
-    * @param {number} ??? - 年齢
+    * @param {number} age - 年齢
     * @returns {boolean} 与えられた年齢がティーンエイジャー（13 歳から 19 歳までの間：「thirTEEN」から「nineTEEN」）かどうか
     */
   function isTeenager(age) {
     // ここにコードを書きましょう.
+    if (typeof age === "number"){
+      return  13 < age && age < 19 ;
+    }else{
+      return "無効です！与えられた年齢は数字ではありません！"
+    }
   }
 
   actual = isTeenager(3);
@@ -142,48 +147,77 @@ if (actual === expected) {
 console.log("基礎３");
 
 /**
-    * @param {string} ??? - 人の名前
-    * @param {boolean} ??? - 丁寧な挨拶にするかどうかを表すブーリアン
-    * @param {boolean} ??? - "Hello" なら true を、"Goodbye" なら false
-    * @returns {string} 与えられた引数に応じた適切な挨拶の文章
+ * @param {string} name - 人の名前
+ * @param {boolean} polite - 丁寧な挨拶にするかどうかを表すブーリアン
+ * @param {boolean} state - "Hello" なら true を、"Goodbye" なら false
+ * @returns {string} 与えられた引数に応じた適切な挨拶の文章
+ */
+ 
+// ここにコードを書きましょう.
+function anotherGreeting(name,polite,state){
+  if (typeof name !== "string" || typeof polite !== "boolean" || typeof state !== "boolean"){
+    console.log("nametype=",typeof name ,"politetype=", typeof polite ,"statetype=", typeof state);
+    return "無効なインプットです！";
+  }
 
-    */
-   // ここにコードを書きましょう.
+  if (state === true){
+    if (polite === true){
+      return `Hello, ${name}-san.`;
+    }else{
+      return `Hello, ${name}!`;
+    }
+  }else{
+    if (polite === true){
+      return `Goodbye, ${name}-san.`;
+    }else{
+      return `Goodbye, ${name}!`;
+    }
+  }
+}
 
-   actual = anotherGreeting("Mary", true, true);
-   expected = "Hello, Mary-san.";
+actual = anotherGreeting("Mary", true, true);
+expected = "Hello, Mary-san.";
 
-   if (actual === expected) {
-     console.log("Yay! Test PASSED.");
-   } else {
-     console.error("Test FAILED. Keep trying!");
-     console.log("    actual: ", actual);
-     console.log("  expected: ", expected);
-   }
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
-   actual = anotherGreeting("Mary", false, true);
-   expected = "Hello, Mary!";
+actual = anotherGreeting("Mary", false, true);
+expected = "Hello, Mary!";
 
-   if (actual === expected) {
-     console.log("Yay! Test PASSED.");
-   } else {
-     console.error("Test FAILED. Keep trying!");
-     console.log("    actual: ", actual);
-     console.log("  expected: ", expected);
-   }
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
-   actual = anotherGreeting("Felix", true, false);
-   expected = "Goodbye, Felix-san.";
+actual = anotherGreeting("Felix", true, false);
+expected = "Goodbye, Felix-san.";
 
-   if (actual === expected) {
-     console.log("Yay! Test PASSED.");
-   } else {
-     console.error("Test FAILED. Keep trying!");
-     console.log("    actual: ", actual);
-     console.log("  expected: ", expected);
-   }
-   // さらにテストを書いて、コードが正しいことを確認してください。
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+// さらにテストを書いて、コードが正しいことを確認してください。
+actual = anotherGreeting("junny", false, false);
+expected = "Goodbye, junny!";
 
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
 
 
@@ -191,83 +225,405 @@ console.log("基礎３");
 console.log("")
 console.log("ここから中級演習")
 //1
-console.log("中級")
+console.log("中級１")
+
 actual = anotherGreeting(true, false, true);
-   expected = "無効なインプットです！";
+expected = "無効なインプットです！";
 
-   if (actual === expected) {
-     console.log("Yay! Test PASSED.");
-   } else {
-     console.error("Test FAILED. Keep trying!");
-     console.log("    actual: ", actual);
-     console.log("  expected: ", expected);
-   }
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
-   actual = anotherGreeting("Sam", true, 0);
-   expected = "無効なインプットです！";
+actual = anotherGreeting("Sam", true, 0);
+expected = "無効なインプットです！";
 
-   if (actual === expected) {
-     console.log("Yay! Test PASSED.");
-   } else {
-     console.error("Test FAILED. Keep trying!");
-     console.log("    actual: ", actual);
-     console.log("  expected: ", expected);
-   }
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
 
 //2
 console.log("中級２")
+/**
+ * @param {number} points - 0 以上 100 以下の点数
+ * @returns {"A"|"B"|"C"|"D"|"F"} 点数に応じた成績
+ */
+function getLetterGrade(points){
+  if (points < 0 || 100 < points){
+    return "無効な点数です。";
+  }
+
+  if (90 <= points && points <= 100){
+    return "A";
+  }else if (80 <= points){
+    return "B";
+  }else if (70 <= points){
+    return "C";
+  }else if (60 <= points){
+    return "D";
+  }else if (points < 60){
+    return "F";
+  }
+}
+
+ actual = getLetterGrade(95);
+ expected = "A";
+
+ if (actual === expected) {
+   console.log("Yay! Test PASSED.");
+ } else {
+   console.error("Test FAILED. Keep trying!");
+   console.log("    actual: ", actual);
+   console.log("  expected: ", expected);
+ }
+
+ // さらにテストを書いて、コードが正しいことを確認してください
+ actual = getLetterGrade(70);
+ expected = "C";
+
+ if (actual === expected) {
+   console.log("Yay! Test PASSED.");
+ } else {
+   console.error("Test FAILED. Keep trying!");
+   console.log("    actual: ", actual);
+   console.log("  expected: ", expected);
+ }
+
+ actual = getLetterGrade(60);
+ expected = "D";
+
+ if (actual === expected) {
+   console.log("Yay! Test PASSED.");
+ } else {
+   console.error("Test FAILED. Keep trying!");
+   console.log("    actual: ", actual);
+   console.log("  expected: ", expected);
+ }
+ actual = getLetterGrade(59.5);
+ expected = "F";
+
+ if (actual === expected) {
+   console.log("Yay! Test PASSED.");
+ } else {
+   console.error("Test FAILED. Keep trying!");
+   console.log("    actual: ", actual);
+   console.log("  expected: ", expected);
+ }
 
 
 //3
 console.log("中級３")
 
+actual = getLetterGrade(101);
+expected = "無効な点数です。";
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+// さらにテストを書いて、コードが正しいことを確認してください
+actual = getLetterGrade(-0.1);
+expected = "無効な点数です。";
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
 
 //4
 console.log("中級４")
+/**
+ * @param {"A"|"B"|"C"|"D"|"F"} grades - 成績
+ * @returns {number} 各成績における最高点
+ */
+function getBestNumericalGrade(grades){
+
+  const arry = ["A","B","C","D","F"]
+  let buf = false
+  for (let i =0 ; i < arry.length ; ++i){
+    // console.log(arry[i])
+    if (grades === arry[i]){
+      buf = true
+    }
+  }
+  if (buf !== true){
+    return "無効な点数です。";
+  }
+
+
+  if (grades === "A"){
+    return 100;
+  }else if (grades === "B"){
+    return 89;
+  }else if (grades === "C"){
+    return 79;
+  }else if (grades === "D"){
+    return 69;
+  }else{
+    return 59;
+  }
+}
+
+
+ actual = getBestNumericalGrade("A");
+ expected = 100;
+
+ if (actual === expected) {
+   console.log("Yay! Test PASSED.");
+ } else {
+   console.error("Test FAILED. Keep trying!");
+   console.log("    actual: ", actual);
+   console.log("  expected: ", expected);
+ }
+
+ actual = getBestNumericalGrade("B");
+ expected = 89;
+
+ if (actual === expected) {
+   console.log("Yay! Test PASSED.");
+ } else {
+   console.error("Test FAILED. Keep trying!");
+   console.log("    actual: ", actual);
+   console.log("  expected: ", expected);
+ }
+
+ // さらにテストを書いて、コードが正しいことを確認してください
+ actual = getBestNumericalGrade("F");
+ expected = 59;
+
+ if (actual === expected) {
+   console.log("Yay! Test PASSED.");
+ } else {
+   console.error("Test FAILED. Keep trying!");
+   console.log("    actual: ", actual);
+   console.log("  expected: ", expected);
+ }
 
 
 //5
 console.log("中級５")
+actual = getBestNumericalGrade("恐竜ってすばらしい");
+expected = "無効な点数です。";
 
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
+actual = getBestNumericalGrade(100);
+expected = "無効な点数です。";
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+// さらにテストを書いて、コードが正しいことを確認してください
+actual = getBestNumericalGrade("E");
+expected = "無効な点数です。";
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
 
 //ここから　応用演習
 console.log("")
 console.log("ここから応用演習")
+console.log("応用１")
+/**  （ド・モルガンの法則）operand=被演算子
+ *    !(P || Q) == !P && !Q  ,   !(P && Q) == !P || !Q
+ * @param {any} ope1 - １つめの被演算子
+ * @param {any} ope2 - ２つめの被演算子
+ * @returns {any} ２つの被演算子を与えられた順番のまま || で評価したときと同じ結果
+ */
+// ここにコードを書きましょう
+// function demorgan(ope1,ope2){
+//   let left = !(ope1 || ope2);
+//   let right = !ope1 && !ope2;
+//   console.log("左辺=",!(ope1 || ope2),"右辺=",!ope1 && !ope2)
 
- /**
-    * @param {any} ??? - １つめの被演算子
-    * @param {any} ??? - ２つめの被演算子
-    * @returns {any} ２つの被演算子を与えられた順番のまま || で評価したときと同じ結果
-    */
-   // ここにコードを書きましょう
+//   if (left === right ){
+//     return true;
+//   }else{
+//     return false;
+//   }
 
-   actual = or(true, true);
-   expected = true;
+// }
 
-   if (actual === expected) {
-     console.log("Yay! Test PASSED.");
-   } else {
-     console.error("Test FAILED. Keep trying!");
-     console.log("    actual: ", actual);
-     console.log("  expected: ", expected);
-   }
+function or(ope1,ope2){
 
-   actual = or(true, false);
-   expected = true;
+  console.log("ope1type=",typeof ope1,"ope2type=",typeof ope2)
 
-   if (actual === expected) {
-     console.log("Yay! Test PASSED.");
-   } else {
-     console.error("Test FAILED. Keep trying!");
-     console.log("    actual: ", actual);
-     console.log("  expected: ", expected);
-   }
+  if (typeof ope1 !== "boolean" && ope1 !== ""){
+    return ope1;
+  }else if(typeof ope2 !== "boolean"){
+    return ope2;
+  }
 
-   // さらにテストを書いて、コードが正しいことを確認してください
+  if (ope1 === false && ope2 === false){
+    return !(ope1 && ope2)
+  } else{
+    return !(!ope1 && !ope2)
+  }
 
+}
+
+actual = or(true, true);
+expected = true;
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = or(true, false);
+expected = true;
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+// さらにテストを書いて、コードが正しいことを確認してください
+actual = or(false, false);
+expected = true;
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = or("bananas", false);
+expected = "bananas";
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = or("", "bananas");
+expected = "bananas";
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+console.log("応用２")
+/**
+ *     !(P || Q) == !P && !Q  ,   !(P && Q) == !P || !Q
+ * @param {any} ope1 - １つめの被演算子
+ * @param {any} ope2 - ２つめの被演算子
+ * @returns {any} ２つの被演算子を与えられた順番のまま && で評価したときと同じ結果
+ */
+// ここにコードを書きましょう
+
+function and(ope1,ope2){
+
+  // console.log("ope1=",ope1,"ope2=",ope2)
+  // console.log("ope1type=",typeof ope1,"ope2type=",typeof ope2)
+
+  if (ope1  === ""){
+    return ope1;
+  }else if(typeof ope1 !== "boolean"){
+    return ope2;
+  }
+
+  if (ope1 === true && ope2 === true){
+    return !(!ope1 || !ope2)
+  } else{
+    return !(ope1 || ope2)
+  }
+
+}
+
+actual = and(true, true);
+expected = true;
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = and(true, false);
+expected = false;
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+// さらにテストを書いて、コードが正しいことを確認してください
+
+actual = and("bananas", false);
+expected = false;
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = and("", "bananas");
+expected = "";
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
 
 

@@ -20,51 +20,26 @@ let actual;
 //   console.log("Yay! Test PASSED.");
 // } else {
 //   console.error("Test FAILED. Keep trying!");
-//   console.log("    actual: ", actual);
-//   console.log("  expected: ", expected);
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
 // }
 
-// function weather(temp){
-//   if (temp > 20 && temp < 26){
-//     return "It's comfortable!";
-//   }
-//   if (temp < 20 || temp > 26){
-//     return "It's too hot or cold!";
-//   }
+
+// ここから配列用テスト
+// actual = ();
+// expected = ;
+//  if (JSON.stringify(actual) === JSON.stringify(expected)) {
+//   console.log("Test PASSED!");
+// } else {
+//   console.error("Test FAILED. Keep trying!");
+//   console.group("Result:");
+//   console.log("  actual:", actual);
+//   console.log("expected:", expected);
+//   console.groupEnd("Result:");
 // }
-// console.log(weather(22));
 
 
-/**
- * @param {number} ??? - 年齢
- * @returns {boolean} 与えられた年齢がティーンエイジャー（13 歳から 19 歳までの間：「thirTEEN」から「nineTEEN」）かどうか
- */
-function isTeenager(age) {
-  // ここにコードを書きましょう.
-  return age >= 13 && age <= 19;
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
-}
-actual = isTeenager(3);
-expected = false;
-
-if (actual === expected) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-
-actual = isTeenager(14);
-expected = true;
-
-if (actual === expected) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-
-
-    // さらにテストを書いて、コードが正しいことを確認してください。

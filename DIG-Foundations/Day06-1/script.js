@@ -274,49 +274,49 @@ function getLetterGrade(points){
   }
 }
 
- actual = getLetterGrade(95);
- expected = "A";
+actual = getLetterGrade(95);
+expected = "A";
 
- if (actual === expected) {
-   console.log("Yay! Test PASSED.");
- } else {
-   console.error("Test FAILED. Keep trying!");
-   console.log("    actual: ", actual);
-   console.log("  expected: ", expected);
- }
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
- // さらにテストを書いて、コードが正しいことを確認してください
- actual = getLetterGrade(70);
- expected = "C";
+// さらにテストを書いて、コードが正しいことを確認してください
+actual = getLetterGrade(70);
+expected = "C";
 
- if (actual === expected) {
-   console.log("Yay! Test PASSED.");
- } else {
-   console.error("Test FAILED. Keep trying!");
-   console.log("    actual: ", actual);
-   console.log("  expected: ", expected);
- }
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
- actual = getLetterGrade(60);
- expected = "D";
+actual = getLetterGrade(60);
+expected = "D";
 
- if (actual === expected) {
-   console.log("Yay! Test PASSED.");
- } else {
-   console.error("Test FAILED. Keep trying!");
-   console.log("    actual: ", actual);
-   console.log("  expected: ", expected);
- }
- actual = getLetterGrade(59.5);
- expected = "F";
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+actual = getLetterGrade(59.5);
+expected = "F";
 
- if (actual === expected) {
-   console.log("Yay! Test PASSED.");
- } else {
-   console.error("Test FAILED. Keep trying!");
-   console.log("    actual: ", actual);
-   console.log("  expected: ", expected);
- }
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
 
 //3
@@ -353,7 +353,7 @@ console.log("中級４")
  * @returns {number} 各成績における最高点
  */
 function getBestNumericalGrade(grades){
-
+  
   const arry = ["A","B","C","D","F"]
   let buf = false
   for (let i =0 ; i < arry.length ; ++i){
@@ -381,39 +381,39 @@ function getBestNumericalGrade(grades){
 }
 
 
- actual = getBestNumericalGrade("A");
- expected = 100;
+actual = getBestNumericalGrade("A");
+expected = 100;
 
- if (actual === expected) {
-   console.log("Yay! Test PASSED.");
- } else {
-   console.error("Test FAILED. Keep trying!");
-   console.log("    actual: ", actual);
-   console.log("  expected: ", expected);
- }
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
- actual = getBestNumericalGrade("B");
- expected = 89;
+actual = getBestNumericalGrade("B");
+expected = 89;
 
- if (actual === expected) {
-   console.log("Yay! Test PASSED.");
- } else {
-   console.error("Test FAILED. Keep trying!");
-   console.log("    actual: ", actual);
-   console.log("  expected: ", expected);
- }
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
- // さらにテストを書いて、コードが正しいことを確認してください
- actual = getBestNumericalGrade("F");
- expected = 59;
+// さらにテストを書いて、コードが正しいことを確認してください
+actual = getBestNumericalGrade("F");
+expected = 59;
 
- if (actual === expected) {
-   console.log("Yay! Test PASSED.");
- } else {
-   console.error("Test FAILED. Keep trying!");
-   console.log("    actual: ", actual);
-   console.log("  expected: ", expected);
- }
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
 
 //5

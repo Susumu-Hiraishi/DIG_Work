@@ -5,6 +5,20 @@
 let actual;     //実際値
 let expected;   //期待値
 
+// ここから配列用テスト用関数
+function test(actual,expected){
+  if (JSON.stringify(actual) === JSON.stringify(expected)) {
+    console.log("Test PASSED!");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.group("Result:");
+    console.log("  actual:", actual);
+    console.log("expected:", expected);
+    console.groupEnd("Result:");
+  }
+}
+
+
 
 //ウォーミングアップ
 console.log("");

@@ -1,0 +1,13 @@
+h1 {
+  color: blue;
+}
+p{
+  color: darkorange;
+}
+#imp{
+  font-weight: 300;
+  color: rgb(215, 104, 158);
+}
+img{
+  width: 400px;
+}

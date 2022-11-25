@@ -40,11 +40,52 @@ let actual;
 //   console.groupEnd("Result:");
 // }
 
+// ここから配列用テスト用関数
+function test(actual,expected){
+  if (JSON.stringify(actual) === JSON.stringify(expected)) {
+    console.log("Test PASSED!");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.group("Result:");
+    console.log("  actual:", actual);
+    console.log("expected:", expected);
+    console.groupEnd("Result:");
+  }
+}
+
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
+/**
+* @param {Array<number>} numArray - 数値型の要素を持つ配列
+* @returns {number} 与えられた配列のすべての数字の合計
+*/
 
+function sumArray(numArray) {
+  let result = 0;
+  // ここにコードを書きましょう。
+  for (const sum of numArray){
+    console.log(result,sum)
+    result +=  sum;
+  }
+  return result;
+}
 
+actual = sumArray([1, 2, 3, 4]);
+expected = 10;
+
+if (actual === expected) {
+  console.log("Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
+
+// さらにテストを書きましょう。
+test(sumArray([1, 2, 3, 4]),10)
 
 
 

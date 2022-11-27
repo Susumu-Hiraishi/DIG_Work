@@ -462,11 +462,18 @@ test(countOccurrences([1, true, true], true ) , 2)
 console.log("")
 console.log("中級３")
 /**
- * @param {Array<any>} ???
+ * @param {Array<any>} arrayToReverse
  * @returns {Array<any>} 与えられた配列の要素が逆の順番に入っている配列
  */
-function reverse() {
+function reverse(arrayToReverse) {
 // ここにコードを書きましょう。
+  let result = [];
+  for (const value of arrayToReverse){
+    result.unshift(value);
+    // console.log(value,result);
+  }
+  return result;
+
 }
 
 const arrayToReverse = ["eeny", "meeny", "miny", "moe"];
@@ -502,28 +509,291 @@ if (JSON.stringify(actual) === JSON.stringify(expected)) {
 }
 
 // さらにテストを書きましょう。
-
+test(reverse(arrayToReverse),["moe", "miny", "meeny", "eeny"]);
 
 
 console.log("")
 console.log("中級４")
+ /**
+  * @param {Array<number>} numArray
+  * @param {"+"|"-"|"*"|"/"|"**"|"%"} opeArray - 使用したい算術演算子を表す文字配列
+  * @param {"+"|"-"|"*"|"/"|"**"|"%"} ope - 使用したい算術演算子を表す文字列
+  * @param {number} num - 使用したい被演算子
+  * @returns {Array<any>} 与えられた配列の各要素に、引数の算術演算子と被演算子を適用した結果が入った新たな配列
+  */
+function getOperatedArray(numArray,ope,num) {
+  // ここにコードを書きましょう。
+  let result = [];
+  let calAns;
+  
+  for (const calNum of numArray){
+    if (ope === "+"){
+      calAns = calNum + num;
+    }else if (ope === "-"){
+      calAns = calNum - num;
+    }else if (ope === "*"){
+      calAns = calNum * num;
+    }else if (ope === "/"){
+      calAns = calNum / num;
+    }else if (ope === "**"){
+      calAns = calNum ** num;
+    }else if (ope === "%"){
+      calAns = calNum % num;
+    }    
+    // console.log(calAns);
+    result.push(calAns);
+  }
+  return result
+  
+}
+  
+actual = getOperatedArray([1, 2, 3], "+", 5);
+expected = [6, 7, 8];
 
+// 現時点では、配列を比較するには JSON.stringify を使う必要があると覚えておいてください。
+if (JSON.stringify(actual) === JSON.stringify(expected)) {
+  console.log("Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
 
+actual = getOperatedArray([9, 6, 3], "/", 3);
+expected = [3, 2, 1];
+
+// 現時点では、配列を比較するには JSON.stringify を使う必要があると覚えておいてください。
+if (JSON.stringify(actual) === JSON.stringify(expected)) {
+  console.log("Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
+
+// さらにテストを書きましょう。
+test(getOperatedArray([11, 10, 9], "%", 3),[2,1,0])
 
 
 //ここから　応用演習
 console.log("")
 console.log("ここから応用演習")
+console.log("")
+console.log("応用１")
+
+ /**
+  * @param {Array<string>} hurtsArray - 「痛む場所」が入った配列
+  * @returns {string} お医者さんに診てもらうときに言うセリフ
+  */
+function callADoctor(hurtsArray) {
+  // ここにコードを書きましょう。
+  let multiCheck = false;
+  let threeWordCheck = false;
+  let wordCount = 0;
+  let outWord;
+  let result;
+  
+  for (const value of hurtsArray){
+    //単数、複数チェック
+    // console.log(value.charAt(value.length -1 ))
+    if (value.charAt(value.length -1 ) === "s"){
+      multiCheck = true;
+    }
+    wordCount += 1;
+    if (wordCount === 1){
+      outWord = value;
+    }else if (wordCount <= 3){
+      outWord += ", " + value;
+    }else{
+      outWord += ", and " + value;
+    }
+  }
+  //１ワード以上の時は最後に","を追加
+  // if (hurtsArray.length > 1){
+  //   outWord += ",";
+  // }
+  //出力文字処理
+  if (multiCheck === false ){
+    outWord += " hurts!" ;
+  }else{
+    outWord += " hurt!";
+  }
+  
+  // console.log(outWord);
+  return `Doctor, doctor! My ${outWord}`
+  
+
+}
+
+actual = callADoctor(["head"]);
+expected = "Doctor, doctor! My head hurts!";
+
+if (actual === expected) {
+  console.log("Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
+
+actual = callADoctor(["shoulders"]);
+expected = "Doctor, doctor! My shoulders hurt!";
+
+if (actual === expected) {
+  console.log("Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
+
+actual = callADoctor(["head", "shoulders", "knees", "toes"]);
+expected = "Doctor, doctor! My head, shoulders, knees, and toes hurt!";
+
+if (actual === expected) {
+  console.log("Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
+
+  // さらにテストを書きましょう。
+test(callADoctor(["head", "shoulders", "knees"]),"Doctor, doctor! My head, shoulders, knees hurt!");
+
+console.log("")
+console.log("応用２")
+/**
+  * @param {Array<any>} numArray
+  * @returns {number} 与えられた配列の「要素」の数。このとき、入れ子になった配列がある場合は、配列内の各要素も一つ一つカウントすること。
+  */
+function deepCount(numArray) {
+  // ここにコードを書きましょう。
+  let arrayCount = 0;
+  let subCount = 0;
+  
+  for (const value of numArray){
+    subCount += 1;
+    // console.log("roop=" + subCount)
+    // console.log(subCount,value,singleCount(value))
+    if (singleCount(value) === undefined){
+      arrayCount += 1;
+      // console.log("roop1=" + arrayCount)
+    }else{
+      for (const value1 of value){
+        if (singleCount(value1) === undefined){
+          arrayCount += 1;
+          // console.log("roop2=" + arrayCount)
+        }else{
+          for (const value2 of value1){
+            if (singleCount(value2) === undefined){
+              arrayCount += 1;
+              // console.log("roop3=" + arrayCount)
+            }else{
+              for (const value3 of value2){
+                if (singleCount(value3) === undefined){
+                  arrayCount += 1;
+                  // console.log("roop4=" + arrayCount)
+                }
+              }  
+            }
+          } 
+        }
+      }
+    }
+  }
+
+  return arrayCount
+
+}
+
+function singleCount(value){
+  let result = "";
+  if (typeof value === "string" && value.length === 1){
+    result = undefined
+  }else{
+    result = value.length
+  }
+  // console.log("single=",result);
+  return result;
+}
 
 
 
+actual = deepCount([1]);
+expected = 1;
 
+if (actual === expected) {
+  console.log("Test1 PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
+
+// console.log("");
+
+actual = deepCount([1, 3]);
+expected = 2;
+
+if (actual === expected) {
+  console.log("Test2 PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
+
+// console.log("");
+
+actual = deepCount([1, 3, [2, 4]]);
+expected = 4;
+
+if (actual === expected) {
+  console.log("Test3 PASSED.");
+} else {
+  console.error("Test3 FAILED. Keep trying!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
+
+// console.log("");
+
+actual = deepCount(["a", "b", ["c", ["d", "e", ["f"]]]]);
+expected = 6;
+
+if (actual === expected) {
+  console.log("Test4 PASSED.");
+} else {
+  console.error("Test4 FAILED. Keep trying!");
+  console.group("Result:");
+  console.log("  actual:", actual);
+  console.log("expected:", expected);
+  console.groupEnd();
+}
+
+// さらにテストを書きましょう。
+test(deepCount([1, "b", [3, ["d", "e", ["f"]]]]),6);
 
 //ここから　ナイトメア
 console.log("")
 console.log("ここからナイトメア")
-
-
 
 
 

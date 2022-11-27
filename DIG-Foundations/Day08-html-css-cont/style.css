@@ -1,0 +1,33 @@
+/* まず、style.cssにこのルールを書き入れてください。 */
+body {
+  font-size: 200%;
+}
+
+/* ここにルールを足していきましょう。*/
+h1 {
+  color: blue;
+}
+
+p {
+  background-color: yellow;
+}
+
+.awesome {
+  font-weight: bold;
+}
+
+.great {
+  font-weight: bold;
+}
+
+#d {
+  color: red;
+}
+
+.little {
+  font-size: 50%;
+}
+
+span {
+  color: green;
+}

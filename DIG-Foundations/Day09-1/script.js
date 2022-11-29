@@ -153,7 +153,7 @@ console.log("=2=");
 const morseCode = {
   t: "-",
   a: ".-",
-  r: ".-.",
+  r: ".-."
 }
 
 test(morseCode["t"], "-");

@@ -19,61 +19,66 @@ function test(actual,expected){
 }
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-// 
-let theLoneliestNumber = 1;
 
-let aFriend = theLoneliestNumber;
+console.log("=1=");
+// let index = 0;
 
-console.log(theLoneliestNumber); // 1
-console.log(aFriend); // 1
-console.log(theLoneliestNumber === aFriend); // true
+// while (index <= 4) {
+//   console.log("hello!");
+//   index++;
+// }
+
+for (let index = 0 ; index <= 4 ; index++){
+  console.log("hello!");
+}
 
 console.log("=2=");
-
-const kermit = [
-  "red",
-  "orange",
-  "yellow",
-  "green",
-  "blue",
-  "indigo",
-  "violet",
-];
-const missPiggy = kermit.slice();
-
-console.log(kermit); //  ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']0: "red"1: "orange"2: "yellow"3: "green"4: "blue"5: "indigo"6: "violet"length: 7[[Prototype]]: Array(0)
-console.log(missPiggy); // ['red', 'orange', 'yellow
-console.log(kermit === missPiggy); // false
+const array = ["a", "b", "c", "d", "e"];
+for (let i = 0; i <= array.length - 1; i++) {
+  console.log("Value:" + array[i], "Index:" + i);
+}
 
 console.log("=3=");
+function sayFourHellos(){
+  for (let i = 1 ; i <= 4 ; i++ ){
+    console.log("Hello!");
+  }
+}
 
-let mamas = "Monday";
-
-let papas = mamas;
-
-papas += ", so good to me.";
-
-console.log(mamas); // Monday
-console.log(papas); // Monday, so good to me.
-console.log(mamas === papas); // false
+sayFourHellos();
+   // "Hello!"
+   // "Hello!"
+   // "Hello!"
+   // "Hello!"
 
 console.log("=4=");
+function countDown(start){
+  for (let i = start ; i >= 0 ; i--){
+    console.log("countDown= " + i);
+  }
+}
 
-const theFabFour = {
-  bass: ["paul"],
-  drums: ["ringo"],
-  guitar: ["george", "john"],
-  vocals: ["george", "john", "paul", "ringo"],
-};
+countDown(5);
 
-const theFifthBeatle = theFabFour;
-theFifthBeatle.guitar.push("beau");
 
-console.log(theFabFour); // {}中が返って来る
+console.log("=基礎１=");
+function sayFourHellos(n){
+  for (let i = 1 ; i <= n ; i++ ){
+    console.log("Hello!");
+  }
+}
 
-console.log(theFifthBeatle); // ???
-console.log(theFabFour === theFifthBeatle); // ???
+sayFourHellos(4);
 
-console.log(theFabFour.guitar); // ???
-console.log(theFifthBeatle.guitar); // ???
-console.log(theFabFour.guitar === theFifthBeatle.guitar); // ???
+
+
+console.log("=基礎２=");
+function countToTen(){
+  for (let i = 1 ; i <= 10 ; i++){
+    console.log(i);
+  }
+}
+
+countToTen();
+
+console.log("=基礎３=");

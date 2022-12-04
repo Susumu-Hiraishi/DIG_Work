@@ -21,64 +21,14 @@ function test(actual,expected){
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
 console.log("=1=");
-// let index = 0;
 
-// while (index <= 4) {
-//   console.log("hello!");
-//   index++;
-// }
 
-for (let index = 0 ; index <= 4 ; index++){
-  console.log("hello!");
-}
+myName("Yan","Fan");
 
-console.log("=2=");
-const array = ["a", "b", "c", "d", "e"];
-for (let i = 0; i <= array.length - 1; i++) {
-  console.log("Value:" + array[i], "Index:" + i);
-}
-
-console.log("=3=");
-function sayFourHellos(){
-  for (let i = 1 ; i <= 4 ; i++ ){
-    console.log("Hello!");
+// function myName(first,last){
+//     window.alert(first + " " + last);
+//   }
+  
+  const myName = function(first,last){
+    window.alert(first + " " + last);
   }
-}
-
-sayFourHellos();
-   // "Hello!"
-   // "Hello!"
-   // "Hello!"
-   // "Hello!"
-
-console.log("=4=");
-function countDown(start){
-  for (let i = start ; i >= 0 ; i--){
-    console.log("countDown= " + i);
-  }
-}
-
-countDown(5);
-
-
-console.log("=基礎１=");
-function sayFourHellos(n){
-  for (let i = 1 ; i <= n ; i++ ){
-    console.log("Hello!");
-  }
-}
-
-sayFourHellos(4);
-
-
-
-console.log("=基礎２=");
-function countToTen(){
-  for (let i = 1 ; i <= 10 ; i++){
-    console.log(i);
-  }
-}
-
-countToTen();
-
-console.log("=基礎３=");

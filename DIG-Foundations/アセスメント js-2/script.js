@@ -97,10 +97,19 @@ test(filterArrayForStrings([obj3, obj2, obj1]), [obj4, obj1, obj1]);
 
 console.log("=4=");
 // i=要素毎の処理
-// j=文字数分繰り返すが、何も出力処理をしない。
+// j=配列の要素数分、繰り返す。４回
 // k=2回、配列の要素を表示する。
 
-// 結論：namesの中の文字が２回づつ繰り返されて表示される
+// 結論：namesの中の文字が、２回づつ繰り返されるのが４回表示される
+//ichi
+//ichi
+//ni
+//ni
+//san
+//san
+//yon
+//yon
+// このセットを４回繰り返される
 
 const names = ["ichi", "ni", "san", "yon"];
 

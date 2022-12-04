@@ -109,17 +109,14 @@ cnt();
 
 console.log("");
 console.log("基礎３");
-  /**
-  * @param {number} x
-  * @returns {(y: number) => number} 引数 y をとり、y に x を足した値を返す関数
-  */
-  // コードを書き始めましょう
-  function add(y) {
+/**
+ * @param {number} x
+ * @returns {(y: number) => number} 引数 y をとり、y に x を足した値を返す関数
+ */
+ // コードを書き始めましょう
+function add(x) {
   // ここにコードを書きましょう
-    const x= y
-    console.log("SC1=" ,x,y)
-
-    function addCalc(y){
+     function addCalc(y){
       console.log("SC2=" ,x,y,x + y)
       return y + x
     } 
@@ -196,16 +193,13 @@ test(adultAccount(), true); // => true (何回呼び出すかに関わらず、�
 console.log("");
 console.log("中級２");
 /**
- * @param {number} x
+ * @param {number} x,y
  * @returns {(y: number) => number} 引数として y をとり、x に y を掛け合わせた値を返す関数
  */
  // ここにコードを書きましょう
-function product(y){
-  const x = y
-  console.log("SC1=",x,y);
-
+function product(x){
   function calcMulti(y){
-    console.log("SC2=",x,y,x*y);
+    console.log("SC=",x,y,x*y);
     return x * y;
   }
 
@@ -222,14 +216,23 @@ console.log("");
 console.log("中級３");
 
 /**
- * @param {number} x
+ * @param {number} x,y
  * @returns {(y: number) => number} 引数として y をとり、x から y を引いた値を返す関数
  */
  // ここにコードを書きましょう
-function subtract(y){
-  let x = y;
-  console.log("SC1=",x,y);
+// function subtract(y){
+//   let x = y;
+//   console.log("SC1=",x,y);
 
+//   function calcSub(y){
+//     console.log("SC2=",x,y,x-y);
+//     return x - y;
+//   }
+
+//   return calcSub;
+// }
+
+function subtract(x){
   function calcSub(y){
     console.log("SC2=",x,y,x-y);
     return x - y;
@@ -237,7 +240,6 @@ function subtract(y){
 
   return calcSub;
 }
-
 
 const subtract5 = subtract(5);
 
@@ -252,7 +254,20 @@ test(subtract(10)(8), 2);
 console.log("")
 console.log("ここからナイトメア")
 
+/**
+* @param {number} ???
+* @returns {Function} 呼び出しが連鎖でき、value メソッドで値を取り出せる関数
+*/
+// ここにコードを書きましょう
 
+
+
+// 関数を一度呼び出すだけでも、value() で値を得られます。
+test(addCurry(1).value(), 1);
+
+// 関数呼び出しを連鎖させて、累計を出すことができます。
+test(addCurry(1)(2).value(), 3);
+test(addCurry(1)(2)(3)(4)(5)(6).value(), 21);
 
 
 

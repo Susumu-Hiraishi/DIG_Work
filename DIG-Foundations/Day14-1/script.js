@@ -30,10 +30,10 @@ console.log("＝ここから、ウォーミングアップ＝");
 // ここにコードを書きましょう
 function divide(x){
   function devide2(y){
-    console.log(x,y,x/y);
+    // console.log(x,y,x/y);
     return x / y ;
   }
-return devide2;
+  return devide2;
 }
 
 const divide2 = divide(2);
@@ -111,8 +111,6 @@ console.log("=1=");
 */
 const myMathObject1 = {
   abs: function (num){
-    let result;
-
     if (num < 0 ){
       return num * -1;
     }else{
@@ -134,7 +132,7 @@ console.log("=2=");
 */
 const myMathObject2 = {
   power: function (bottom,index){
-    console.log(bottom,index,bottom ** index)
+    // console.log(bottom,index,bottom ** index)
     return bottom ** index;
   }
 }
@@ -185,19 +183,104 @@ console.log("")
 console.log("ここから応用演習")
 
 console.log("=1=");
+/**
+* @param {number} num
+* @returns {number} 与えられた数字を切り上げた整数
+*/
+const myMathObject3 = {
+  ceil: function (num){
+    let str = String(num + 0.9);
+    const ceilWord = str.split(".");
+    // console.log(ceilWord[0],ceilWord);
+    return Number(ceilWord[0])
+  }
+}
+
+
+test(myMathObject3.ceil(1.1), 2);
+test(myMathObject3.ceil(2.2), 3);
+test(myMathObject3.ceil(3.3), 4);
+test(myMathObject3.ceil(4.4), 5);
+test(myMathObject3.ceil(5.5), 6);
 
 
 
 console.log("=2=");
+/**
+* @param {number} ???
+* @returns {number} 与えられた数字を切り下げた整数
+*/
+const myMathObject4 = {
+  floor: function (num){
+    let str = String(num);
+    const ceilWord = str.split(".");
+    // console.log(ceilWord[0],ceilWord);
+    return Number(ceilWord[0])
+  }
+}
 
+test(myMathObject4.floor(1.1), 1);
+test(myMathObject4.floor(2.2), 2);
+test(myMathObject4.floor(3.3), 3);
+test(myMathObject4.floor(4.4), 4);
+test(myMathObject4.floor(5.5), 5);
 
 
 console.log("=3=");
+/**
+* @param {number} ???
+* @returns {number} 与えられた数字を四捨五入した整数
+*/
+const myMathObject5 = {
+  round: function (num){
+    let str = String(num + 0.5);
+    const ceilWord = str.split(".");
+    // console.log(ceilWord[0],ceilWord);
+    return Number(ceilWord[0])
+  }
+}
 
+test(myMathObject5.round(1.1), 1);
+test(myMathObject5.round(2.2), 2);
+test(myMathObject5.round(3.3), 3);
+test(myMathObject5.round(4.4), 4);
+test(myMathObject5.round(5.5), 6);
+test(myMathObject5.round(6.6), 7);
+test(myMathObject5.round(7.7), 8);
 
 
 console.log("=4=");
+/**
+* @param {number} ???
+* @returns {{ [primeFactor: number]: number }} 引数の数値を素因数分解し、キーを _素因数_ 、値を対応する _指数_ にしたオブジェクト
+*/
 
+// test(myMathObject.primeFactorization(2), { 2: 1 });
+// test(myMathObject.primeFactorization(3), { 3: 1 });
+// test(myMathObject.primeFactorization(4), { 2: 2 });
+// test(myMathObject.primeFactorization(5), { 5: 1 });
+// test(myMathObject.primeFactorization(6), { 2: 1, 3: 1 });
+// test(myMathObject.primeFactorization(200560490130), {
+//   2: 1,
+//   3: 1,
+//   5: 1,
+//   7: 1,
+//   11: 1,
+//   13: 1,
+//   17: 1,
+//   19: 1,
+//   23: 1,
+//   29: 1,
+//   31: 1,
+// });
+// test(myMathObject.primeFactorization(900719925474099), {
+//   3: 1,
+//   53: 1,
+//   157: 1,
+//   1613: 1,
+//   2731: 1,
+//   8191: 1,
+// });
 
 
 

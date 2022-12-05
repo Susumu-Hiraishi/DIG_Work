@@ -23,12 +23,3 @@ function test(actual,expected){
 console.log("=1=");
 
 
-myName("Yan","Fan");
-
-// function myName(first,last){
-//     window.alert(first + " " + last);
-//   }
-  
-  const myName = function(first,last){
-    window.alert(first + " " + last);
-  }

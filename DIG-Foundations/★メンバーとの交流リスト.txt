@@ -91,7 +91,7 @@ horikosi　さん
 　仕様変更当を行っている
 　エンジン制御　１６BIT　ｃソース　モデル　
 
-１６日
+１６日目(12/7)
 　吉岡　山口　藤川　柴咲　SAM
 　印象に残っている、人は！
 　SAM３　たなちゅー３　
@@ -102,3 +102,20 @@ horikosi　さん
 　　　データベース、システム連携
 
 　Ayumiさんが入ってくれました。
+
+１７日目(12/8)
+ 5分で聞きたいことを出す。
+
+　MORI、sam、田中toshi　watanabe　山本kouji
+yoshioka horikoshi 
+　Ayumiが入ってくれました。
+waniwani
+day5,8 演算子が文字列の時の計算は！
+プログラマーは、便利な機能を使っている。
+
+ryusei さん
+　元町　機械部　設備課
+　　DX担当で行っている　PG加工
+　　VBA　PowerPlatform
+　小学校頃から
+

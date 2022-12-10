@@ -1,25 +1,57 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
-  <link rel="stylesheet" href="gators.css">
-</head>
+  <link rel="stylesheet" href="RocPaperScissor.css">
+  </head>
+
 <body>
-  <h1 id="title">ワニワニ大放出!!</h1>
-  <div class="rectgreen">
-    <p><input type = "number" id="inText"></p>
-    <div class="button">
-      <button id="btn1">ワニ放出！</button>
-      <p></p>
-      <button id="btn2">ワニ捕獲！</button>
-    </div>
+  <h1 id="title">ジャンけんＰｏｎ　!!</h1>
+  <button id="btnRefresh">=Start=</button>
+  <p></p>
+  <div class="rectImg">
+    <img id="img" src="data\normal.gif" alt="イメージ">
   </div>
-  <div class="rectblue">
-    <p id="gator" ></p>
+  <p></p>
+
+  <div class="tableKekka">
+    <table border="1">
+      <caption>結果状態</caption>
+      <tr>
+        <th>1回目</th>
+        <th>2回目</th>
+        <th>3回目</th>
+        <th>4回目</th>
+        <th>5回目</th>
+      </tr>
+      <tr>
+        <th id="kekka1">　</th>
+        <th id="kekka2">　</th>
+        <th id="kekka3">　</th>
+        <th id="kekka4">　</th>
+        <th id="kekka5">　</th>
+      </tr>
+    </table>
+    <p></p>
   </div>
 
-  <script src="gators.js"></script>
+  <div class="userButton">
+    <fieldset>
+      <legend>どれを選ぶ</legend>
+      <table>
+        <tr>
+          <td><button id="btn1">ぐー</button></td>
+          <td><button id="btn2">ちょき</button></td>
+          <td><button id="btn3">ぱー</button></td>
+        </tr>
+      </table>
+    </fieldset>
+  </div>
+
+  <script src="RocPaperScissor.js"></script>
 </body>
+
 </html>

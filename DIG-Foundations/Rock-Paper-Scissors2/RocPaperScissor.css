@@ -1,0 +1,64 @@
+h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+img{
+  width: 350px;
+  height: 300px;
+  margin: auto;
+}
+.rectImg {
+  width: 350px;
+  height: 300px;
+  border: 1px solid;
+  background: green;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tableKekka{
+font-size: 20px;
+}
+
+.userButton{
+  font-size: 30px;
+  text-align: center;
+  align-items: center;
+  color: red;
+}
+
+table{
+  margin: auto;
+  align-items: center;
+  color: black;
+}
+
+#btn1 {
+  font-size: 45px;
+  display: flex;
+  justify-content: space-between;
+  color: red;
+}
+
+#btn2 {
+  font-size: 45px;
+  display: flex;
+  justify-content: space-between;
+  color: blue;
+}
+
+#btn3 {
+  font-size: 45px;
+  display: flex;
+  justify-content: space-between;
+  color: green;
+}
+
+#btnRefresh {
+  margin: auto;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: green;
+}

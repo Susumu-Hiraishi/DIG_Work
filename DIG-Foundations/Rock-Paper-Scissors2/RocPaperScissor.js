@@ -22,27 +22,29 @@ let imgObj = {
 
 
 /**
- *  ユーザーとコンピューターの判定を行い、イメージの変更をする
+ *ユーザーとコンピューターの判定を行い、イメージの変更をする
  * @param {number} usrNum - ユーザーが選択した
  * @returns {number[1-3]]} ランダムで１－３の数字を返す
  */
 function mainRun(usrNum) {
   // 結果表に結果が５回は入っていたら総合評価して終了
-
-  // じゃんけんの実施
+  // コンピュータの手を決める
   winner = "";
   const cpuNum = cpuAns();
+
+  //決めた手の画像を変更
   if (cpuNum === 1) {
     chengImage("roc");
-
+    
   } else if (cpuNum === 2) {
     chengImage("scissors");
-
+    
   } if (cpuNum === 3) {
     chengImage("paper");
-
+    
   }
-
+  
+  //結果の判定
   if (usrNum === 1 && cpuNum === 2) {
     winner = "you";
   } else if (usrNum === 1 && cpuNum === 3) {
@@ -60,11 +62,11 @@ function mainRun(usrNum) {
   }
 
 
-  // 結果によるアクション
+  // 各回の結果保存とアクション
   console.log(usrNum, cpuNum, winner)
   arraySetAns(winner);
 
-
+  //５回実施時の結果表示
   if (resultArray.length === 5) {
     resultView()
     return
@@ -124,7 +126,6 @@ function resultView() {
 
 }
 
-
 /**
  * 結果表にデータをセットする関数
  * @param {number} result - 判定結果
@@ -153,7 +154,7 @@ function arraySetAns(result) {
 
 
 /**
- *  じゃんけんで、コンピューターの結果を返す関数
+ * じゃんけんで、コンピューターの結果を返す関数
  * @returns {anyNmber[1-3]} ランダムで１－３の数字を返す
  */
 function cpuAns() {
@@ -161,6 +162,7 @@ function cpuAns() {
   return Math.floor(Math.random() * 3) + 1
 }
 
+//ぐーを押したときの処理
 let btn1 = document.getElementById("btn1"); //Roc
 btn1.addEventListener('click', function () {
   sleep(1000);
@@ -168,6 +170,7 @@ btn1.addEventListener('click', function () {
 
 }, false);
 
+//ちょきを押したときの処理
 let btn2 = document.getElementById("btn2"); //Scissors
 btn2.addEventListener('click', function () {
   sleep(1000);
@@ -175,6 +178,7 @@ btn2.addEventListener('click', function () {
 
 }, false);
 
+//ぱーを押したときの処理
 let btn3 = document.getElementById("btn3"); //Paper
 btn3.addEventListener('click', function () {
   sleep(1000);
@@ -182,6 +186,7 @@ btn3.addEventListener('click', function () {
 
 }, false);
 
+//スタートを押したときの処理
 let btnRefresh = document.getElementById("btnRefresh");
 btnRefresh.addEventListener('click', function () {
   window.location.reload();

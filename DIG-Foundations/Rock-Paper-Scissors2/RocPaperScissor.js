@@ -32,45 +32,48 @@ function mainRun(usrNum) {
   // コンピュータの手を決める
   winner = "";
   const cpuNum = cpuAns();
+  //　４回以内の結果がある時は処理を実行する
+  if (resultArray.length < 5 ){
 
-  //決めた手の画像を変更
-  if (cpuNum === 1) {
-    chengImage("roc");
+    //決めた手の画像を変更
+    if (cpuNum === 1) {
+      chengImage("roc");
 
-  } else if (cpuNum === 2) {
-    chengImage("scissors");
+    } else if (cpuNum === 2) {
+      chengImage("scissors");
 
-  } if (cpuNum === 3) {
-    chengImage("paper");
+    } if (cpuNum === 3) {
+      chengImage("paper");
 
-  }
+    }
 
-  //結果の判定
-  if (usrNum === 1 && cpuNum === 2) {
-    winner = "you";
-  } else if (usrNum === 1 && cpuNum === 3) {
-    winner = "cpu";
-  } else if (usrNum === 2 && cpuNum === 1) {
-    winner = "cpu";
-  } else if (usrNum === 2 && cpuNum === 3) {
-    winner = "you";
-  } else if (usrNum === 3 && cpuNum === 1) {
-    winner = "you";
-  } else if (usrNum === 3 && cpuNum === 2) {
-    winner = "cpu";
-  } else {
-    winner = "draw";
-  }
+    //結果の判定
+    if (usrNum === 1 && cpuNum === 2) {
+      winner = "you";
+    } else if (usrNum === 1 && cpuNum === 3) {
+      winner = "cpu";
+    } else if (usrNum === 2 && cpuNum === 1) {
+      winner = "cpu";
+    } else if (usrNum === 2 && cpuNum === 3) {
+      winner = "you";
+    } else if (usrNum === 3 && cpuNum === 1) {
+      winner = "you";
+    } else if (usrNum === 3 && cpuNum === 2) {
+      winner = "cpu";
+    } else {
+      winner = "draw";
+    }
 
 
-  // 各回の結果保存とアクション
-  console.log(usrNum, cpuNum, winner)
-  arraySetAns(winner);
+    // 各回の結果保存とアクション
+    console.log(usrNum, cpuNum, winner)
+    arraySetAns(winner);
 
-  //５回実施時の結果表示
-  if (resultArray.length === 5) {
-    resultView()
-    return
+    //５回実施時の結果表示
+    if (resultArray.length === 5) {
+      resultView()
+      return
+    }
   }
 }
 
@@ -107,6 +110,7 @@ function chengImage(imgName) {
  */
 function resultView() {
   if (resultArray.length === 5) {
+    console.log(resultArray);
     let count = 0;
     resultArray.forEach(element => {
       if (element === "○") {

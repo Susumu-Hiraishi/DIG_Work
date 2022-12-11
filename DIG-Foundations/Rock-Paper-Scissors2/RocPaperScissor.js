@@ -10,7 +10,7 @@ let userSelect;
 let resultArray = [];
 let winner;
 
-let imgObj = {
+const imgObj = {
   "normal": "https://user-images.githubusercontent.com/115196019/206836136-4c996eec-7530-45fc-a7e9-a89eddb39182.gif",
   "roc": "https://user-images.githubusercontent.com/115196019/206836167-28d67f1b-06e3-434f-9507-2d674dc9749a.png",
   "paper": "https://user-images.githubusercontent.com/115196019/206836205-7422cab8-4c93-4a0b-8ed5-2f444066fba0.png",
@@ -18,6 +18,7 @@ let imgObj = {
   "draw": "https://user-images.githubusercontent.com/115196019/206836233-6bb86bad-a80b-4505-9fe2-2d1e46f6038b.png",
   "boxWin": "https://user-images.githubusercontent.com/115196019/206836253-01a4b9e6-1d71-41c6-b0f3-d730c16ee3ff.gif",
   "boxLose": "https://user-images.githubusercontent.com/115196019/206836263-57e1de43-1c4d-4f69-b5bf-4ab6bbf86e60.gif",
+  "boxMaoh": "https://user-images.githubusercontent.com/115196019/206879352-f4d66091-3d3f-49bd-af8f-726d8316145b.gif",
 };
 
 
@@ -35,15 +36,15 @@ function mainRun(usrNum) {
   //決めた手の画像を変更
   if (cpuNum === 1) {
     chengImage("roc");
-    
+
   } else if (cpuNum === 2) {
     chengImage("scissors");
-    
+
   } if (cpuNum === 3) {
     chengImage("paper");
-    
+
   }
-  
+
   //結果の判定
   if (usrNum === 1 && cpuNum === 2) {
     winner = "you";
@@ -116,6 +117,9 @@ function resultView() {
     if (count >= 3) {
       // window.alert("あなた勝ち");
       chengImage("boxWin");
+    } else if (count === 0) {
+      // window.alert("コンピューターの勝ち");
+      chengImage("boxMaoh");
     } else {
       // window.alert("コンピューターの勝ち");
       chengImage("boxLose");

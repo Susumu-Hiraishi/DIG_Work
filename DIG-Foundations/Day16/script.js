@@ -30,7 +30,8 @@ console.log("1");
 
 /**
 * @param {{ [key: string]: number }} numObj
-* @returns {{ [key: string]: number }} 与えられたオブジェクトと同じ値を持つが、数値には 1 が足されたオブジェクト
+* @returns {{ [key: string]: number }} 与えられたオブジェクトと同じ値を持つが、
+数値には 1 が足されたオブジェクト
 */
 function incrementNumbers(numObj){
   const resultObj = {};

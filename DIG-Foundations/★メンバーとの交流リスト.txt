@@ -108,7 +108,8 @@ horikosi　さん
 
 　MORI、sam、田中toshi　watanabe　山本kouji
 yoshioka horikoshi 
-　Ayumiが入ってくれました。
+　Ayumiさんが入ってくれました。
+
 waniwani
 day5,8 演算子が文字列の時の計算は！
 プログラマーは、便利な機能を使っている。
@@ -118,4 +119,26 @@ ryusei さん
 　　DX担当で行っている　PG加工
 　　VBA　PowerPlatform
 　小学校頃から
+
+　yurikoさんが入ってくれました。
+
+１８日目(12/9)
+mori kohei 
+ AI講座を受けました。　２９歳
+ 　高岡車体　ボデー　プログラム　VBA　いまはやっていない
+ 　今から、DXとして使っていけたら、　ブートキャンプも行きたい
+
+１９日目(12/12)
+SAMさんおはようございます。藤川です。
+すみません、ちょっと教えてほしくて。
+ポケモンプロジェクトで、攻撃耐性”FIRE"のモンスターのOBJECTを
+返しなさい、という問題があったかと思います。(基本演習4以降)。
+
+そこで、if (obj["Resistant"].includes("Fire")){
+    return obj;
+と入力したけど、うまくOBJECTを返せません。
+お時間のある時でいいので、ヒントいただけませんか？
+
+
+
 

@@ -26,14 +26,23 @@ function test(actual, expected) {
 * @param {Array<number>} arrNum
 * @returns {Array<number>} 5以下の数字の２条を配列で返す
 */
-function doTheThing(arrNum) {
-  let result = [];
-  for (const num of arrNum) {
-    if (num <= 5) {
-      result.push(num ** 2);
-    }
-  }
-  return result;
+// function doTheThing(arrNum) {
+//   let result = [];
+//   for (const num of arrNum) {
+//     if (num <= 5) {
+//       result.push(num ** 2);
+//     }
+//   }
+//   return result;
+// }
+
+function doTheThing(arrNum){
+
+  const  resultArray = arrNum
+  .filter((num) => num <= 5 )
+  .map((num) => num ** 2);
+
+  return resultArray;
 }
 
 test(doTheThing([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), [1, 4, 9, 16, 25]);

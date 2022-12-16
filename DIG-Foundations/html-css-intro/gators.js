@@ -4,7 +4,7 @@ let resultWani = "";
 // window.alert("");
 /**
  * @param {number} num -読込キーワード
- * @returns {anyText} ワニのキャラクターを表示する
+ * @returns {anyText} ワニのキャラクターを表示数をresultEaniに返す
  */
 function addGators(num){
   const gatorPic = "🐊"

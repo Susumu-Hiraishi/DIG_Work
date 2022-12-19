@@ -1,0 +1,109 @@
+body {
+  background-color: #74992e;;
+}
+  
+h1 {
+  text-align: end;
+  font-size: 50px;
+  margin-top: 20px;
+  margin-right: 80px;
+  margin-bottom: 1px;
+}
+
+h2 {
+  position: relative;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 1px;
+  margin-bottom: 10px;
+}
+
+.wrap {
+  display: flex;
+  margin-left: 100px;
+  gap: 50px;
+}
+
+.other1 {
+  position: relative;
+  font-size: 20px;
+  margin-top: 50px;
+  margin-left: 200px;
+  margin-bottom: 1px;
+}
+
+.other1_2 {
+  position: relative;
+  font-size: 20px;
+  margin-top: 1px;
+  margin-left: 110px;
+  margin-bottom: 1px;
+}
+
+.other1_3 {
+  position: relative;
+  font-size: 20px;
+  margin-top: 1px;
+  margin-left: 400px;
+  margin-bottom: 1px;
+}
+
+.other2 {
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 8px;
+  margin-left: 8px;
+  margin-bottom: 1px;
+}
+
+.end {
+  position: relative;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+h5 {
+  position: relative;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  display: none;
+}
+ 
+.img{ 
+  heigkt:100px;
+  border:1px;
+/*   overflow:scroll; */
+  background:url("https://drive.google.com/uc?export=view&id=1UI3rbu2Uen7sBkgrGgnCzjmdkAC-DdGA”);
+}
+
+p{
+width:800px; /* ボックスの横幅を指定する */
+font-size: 20px; /* フォントのサイズを指定する */
+text-align:;
+background-color:#74992e;/* ボックスの色 */
+line-height: 1em; /* 行の高さを実数値＋単位(em)で指定する */
+}
+
+
+
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: #eb6100;
+}
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+a.btn--radius {
+   border-radius: 100vh;
+}  
+  
+

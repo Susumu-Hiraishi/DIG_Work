@@ -2,7 +2,7 @@
 // 1行目に記載している 'use strict' は削除しないでください
 
 //ワニの数入力するテキストボックス
-const input = document.getElementById("number");
+// const input = document.getElementById("number");
 // console.log(input);
 
 //ワニ放出のボタン
@@ -30,11 +30,33 @@ function gators(){
   // if(typeof object === "number");  //テキストボックスの数字を見に行く
   console.log("gators")
   // return 
-  document.getElementById("gatorBox").textContent = "🐊";
+  // document.getElementById("gatorBox").textContent = "🐊";
+  let input = document.getElementById("number");
+  let number = input.value;
+  
+  console.log(number);
 
+  // let result = input + number;
+  // console.log(result);
+
+let result = "";
+for (let i=1; i <=number ; i++){
+  result += "🐊";
+}
+
+console.log(result);
+// document.getElementsByClassName("underbox").innerText = result;
+document.getElementById("gatorBox").innerText = result;
 }
   
- 
+//ワニの数入力するテキストボックスを取得(文字列を結合する)=================================
+
+// ​let result = input + number;
+
+
+// ​console.log(result); 
+
+
   //ワニ放出！ボタンをクリック
   //テキストボックスの数字を見に行く
   //テキストボックスの数字の数と同じ数の文字列を取る

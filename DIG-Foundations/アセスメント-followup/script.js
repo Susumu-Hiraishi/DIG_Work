@@ -21,7 +21,7 @@ function test(actual, expected) {
 
 // ==============================================================
 //assessment-FollowUP
-console.log("1");
+console.log("=1=");
 // ここにコードを書きましょう
 /**
 * @param {Array<number>} arrNum
@@ -41,7 +41,7 @@ test(evenOrOdd([0, 4, 36], false), []);
 test(evenOrOdd([-1, -2, 4, -5, -7], false), [-1, -5, -7]);
 
 // ==============================================================
-console.log("2");
+console.log("=2=");
 // ここにコードを書きましょう
 /**
 * @param {object} anyObj　オブジェクト
@@ -63,7 +63,7 @@ test(findKeys({ a: 1, b: 2, c: 6, d: 4, e: 2 }, 2), ["b", "e"]);
 test(findKeys({ 1: "h", b: "el", c: "hello", d: "hello", e: "o" }, "hello"), ["c", "d"]);
 
 // ==============================================================
-console.log("3");
+console.log("=3=");
 // ここにコードを書きましょう
 /**
 * @param {Array<any>} arrKey -keyとなる文字の配列
@@ -88,7 +88,7 @@ test(buildObject(["abc", "def", "ghi"], [[0, 1, 2], [3, 4, 5], [6, 7, 8]]),
   { "abc": [0, 1, 2], "def": [3, 4, 5], "ghi": [6, 7, 8] })
 
 // ==============================================================
-console.log("4");
+console.log("=4=");
 // ここにコードを書きましょう
 /**
  * @param {number} x　ｘの値
@@ -111,7 +111,7 @@ const addOneHundred = add(100);
 test(addOneHundred(3), 103);
 
 // ==============================================================
-console.log("5");
+console.log("=5=");
 /**
  * 引数を持たない、リターンを返さない関数
  */
@@ -143,11 +143,11 @@ console.log(bar);  // Act4
 //  Hello, JavaScript
 
 // ==============================================================
-console.log("6");
+console.log("=6=");
 console.log("別ファイル Asessment6-script.js を参照");
 
 // ==============================================================
-console.log("7");
+console.log("=7=");
 // ここにコードを書きましょう
 /**
  * @param {[Object]or{Object}} arrAny  object
@@ -179,13 +179,138 @@ test(map([1, 2, 3], addOne), [2, 3, 4]);
 test(map({ a: 1, b: 2, c: 3 }, addOne), [2, 3, 4]);
 
 // ==============================================================
-console.log("8");
+console.log("=8=");
 // ここにコードを書きましょう
 /**
  * @param {string} words  元の文
  * @param {string} chgWord  置き換える文字
- * @returns {number}  元の文の２つ目のワードを、置き換え手返す 
+ * @returns {string}  元の文の２つ目のワードを、置き換えて文を返す。 
  */
+function changeMiddle(words, chgWord) {
+  const splitWords = words.split(" ");
+  // console.log(splitWords);
+  return `${splitWords[0]} ${chgWord} ${splitWords[2]}`;
+}
 
-test(changeMiddle("I like cats", "love"),"I love cats");
-test(changeMiddle("red green blue", "yellow"),"red yellow blue");
+test(changeMiddle("I like cats", "love"), "I love cats");
+test(changeMiddle("red green blue", "yellow"), "red yellow blue");
+
+// ==============================================================
+console.log("=9=");
+// ここにコードを書きましょう
+/**
+ * @param {[array<any>]} arrAny  いろいろな要素の入った配列
+ * @returns {string}  　配列の中で、一番多い要素名と数を返す。 
+ */
+function countSomething(arrAny) {
+  let cntString = 0, cntBool = 0, cntNumber = 0, cntErr = 0;
+  for (const word of arrAny) {
+    if (typeof word === "string") {
+      cntString += 1;
+    } else if (typeof word === "boolean") {
+      cntBool += 1;
+    } else if (typeof word === "number") {
+      cntNumber += 1;
+    } else {
+      cntErr += 1
+    }
+  }
+  //Err処理
+  if (cntErr > 0) {
+    return "読み取れない要素がありました！";
+  }
+  //最大要素の判定
+  const countArray = [cntString, cntBool, cntNumber];
+  // console.log(countArray);
+  const maxIndex = countArray.indexOf(Math.max(...countArray));
+  // console.log(maxIndex);
+
+  //出力処理
+  if (maxIndex === 0) {
+    return `STRING COUNT: ${countArray[maxIndex]}`
+  } else if (maxIndex === 1) {
+    return `BOOL COUNT: ${countArray[maxIndex]}`
+  } else if (maxIndex === 2) {
+    return `NUMBER COUNT: ${countArray[maxIndex]}`
+  }
+}
+
+test(countSomething(["a", "b", "c", true, false, 2]), "STRING COUNT: 3")
+test(countSomething([true, true, false, true]), "BOOL COUNT: 4")
+test(countSomething([true, true, 1, 0, 1, false, 1]), "NUMBER COUNT: 4")
+
+// ==============================================================
+console.log("=10=");
+// ここにコードを書きましょう
+/**
+ * @param {[Object]or{Object}} arrAny  object
+ * @param {function} callbackFunc  function
+ */
+// コードを書き始めましょう
+function each(arrAny, callbackFunc) {
+  if (Array.isArray(arrAny) === true) {
+    for (const num of arrAny) {
+      // console.log(num);   //ここをコールバック関数にする
+      action(num);
+    }
+  } else {
+    for (const key in arrAny) {
+      // console.log(arrAny[key]);   //ここをコールバック関数にする
+      action(arrAny[key]);
+    }
+  }
+  function action(num) {
+    callbackFunc(num);
+  }
+}
+
+each({ a: 1, b: 2, c: 3 }, console.log);
+each([4, 5, 6], console.log);
+
+// 上記を実行すると下記を表示するはずです
+// 1
+// 2
+// 3
+// 4
+// 5
+// 6
+
+// ==============================================================
+console.log("=11=");
+// ここにコードを書きましょう
+/**
+ * @param {function} funcA  1つ目の関数
+ * @param {function} funcB  2つ目の関数
+ * @returns {string}  2つの関数を受け取り、新しい関数とする 
+ */
+function compose(funcA, funcB) {
+  // let resultNum = 0;
+  // resultNum = funcA;
+  // console.log("funcA=", resultNum);
+  // resultNum += funcB;
+  // console.log("funcB=", resultNum);
+  console.log (funcA);
+  console.log (funcB);
+  funcA;
+  const resultNum = funcB;
+  // const resultNum = funcA => funcB;
+  // const resultNum = funcA = funcB;
+  return resultNum; 
+}
+
+// function baz(num) {      //やりたいことはこれ
+//   const aa = multiplyTwo(num);
+//   return addTen(aa);
+// }
+
+function multiplyTwo(x) {
+  return x * 2;
+}
+
+function addTen(x) {
+  return x + 10;
+}
+
+const baz = compose(multiplyTwo, addTen);
+test(baz(5), 20);
+test(baz(100), 210);

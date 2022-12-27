@@ -284,18 +284,25 @@ console.log("=11=");
  * @returns {string}  2つの関数を受け取り、新しい関数とする 
  */
 function compose(funcA, funcB) {
+
+  return function (x) {
+    return funcB(funcA(x));
+  }
+
+
   // let resultNum = 0;
   // resultNum = funcA;
   // console.log("funcA=", resultNum);
   // resultNum += funcB;
   // console.log("funcB=", resultNum);
-  console.log (funcA);
-  console.log (funcB);
-  funcA;
-  const resultNum = funcB;
-  // const resultNum = funcA => funcB;
-  // const resultNum = funcA = funcB;
-  return resultNum; 
+
+  // console.log (funcA);
+  // console.log (funcB);
+  // funcA;
+  // const resultNum = funcB;
+  // // const resultNum = funcA => funcB;
+  // // const resultNum = funcA = funcB;
+  // return resultNum; 
 }
 
 // function baz(num) {      //やりたいことはこれ

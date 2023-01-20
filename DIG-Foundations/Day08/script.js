@@ -592,10 +592,10 @@ console.log("応用１")
 function callADoctor(hurtsArray) {
   // ここにコードを書きましょう。
   let multiCheck = false;
-  let threeWordCheck = false;
+  // let threeWordCheck = false;
   let wordCount = 0;
   let outWord;
-  let result;
+  // let result;
   
   for (const value of hurtsArray){
     //単数、複数チェック
@@ -668,13 +668,44 @@ if (actual === expected) {
   console.groupEnd();
 }
 
+// function callADoctor(arr) {
+//   let result;
+//   // 配列の最後の要素
+//   const lastElement = arr[arr.length-1] 
+//   // 配列をコピー(非破壊処理)
+//   const newArr = [...arr];
+//   // 最後を除いた配列
+//   newArr.pop();
+//   // 配列を文字列化(2文字まで)
+//   const word1 = arr.join(", ");
+//   // 最後を除いた配列を文字列化
+//   const word2 = newArr.join(", ");
+  
+  
+//   for (const elem of arr) {
+//     // 要素2つ以上
+//     if (arr.length > 1) {
+//       result = `Doctor, doctor! My ${word2}, and ${lastElement} hurt!`;
+//       // 要素1つ 末尾sあり
+//     } else if (arr.length = 1 && elem.endsWith("s") === true) {
+//       result = `Doctor, doctor! My ${word1} hurt!`;
+//       // 要素1つ 末尾sなし
+//     }  else {
+//       result = `Doctor, doctor! My ${word1} hurts!`;
+//     }
+//   }
+  
+//   return result;
+// }
+
+
   // さらにテストを書きましょう。
-test(callADoctor(["head", "shoulders", "knees"]),"Doctor, doctor! My head, shoulders, knees hurt!");
+test(callADoctor(["head", "shoulders", "knees"]),"Doctor, doctor! My head, shoulders, knees hurt!");  
 
 console.log("")
 console.log("応用２")
 /**
-  * @param {Array<any>} numArray
+  * @param {Array<any>} numArray 
   * @returns {number} 与えられた配列の「要素」の数。このとき、入れ子になった配列がある場合は、配列内の各要素も一つ一つカウントすること。
   */
 function deepCount(numArray) {
@@ -704,18 +735,18 @@ function deepCount(numArray) {
                 if (singleCount(value3) === undefined){
                   arrayCount += 1;
                   // console.log("roop4=" + arrayCount)
-                }
-              }  
-            }
-          } 
-        }
-      }
-    }
-  }
+                }  
+              }    
+            }  
+          }   
+        }  
+      }  
+    }  
+  }  
 
   return arrayCount
 
-}
+}  
 
 function singleCount(value){
   let result = "";
@@ -723,10 +754,10 @@ function singleCount(value){
     result = undefined
   }else{
     result = value.length
-  }
+  }  
   // console.log("single=",result);
   return result;
-}
+}  
 
 
 
@@ -741,7 +772,7 @@ if (actual === expected) {
   console.log("  actual:", actual);
   console.log("expected:", expected);
   console.groupEnd();
-}
+}  
 
 // console.log("");
 
@@ -756,7 +787,7 @@ if (actual === expected) {
   console.log("  actual:", actual);
   console.log("expected:", expected);
   console.groupEnd();
-}
+}  
 
 // console.log("");
 
@@ -771,7 +802,7 @@ if (actual === expected) {
   console.log("  actual:", actual);
   console.log("expected:", expected);
   console.groupEnd();
-}
+}  
 
 // console.log("");
 
@@ -786,7 +817,7 @@ if (actual === expected) {
   console.log("  actual:", actual);
   console.log("expected:", expected);
   console.groupEnd();
-}
+}  
 
 // さらにテストを書きましょう。
 test(deepCount([1, "b", [3, ["d", "e", ["f"]]]]),6);

@@ -8,15 +8,38 @@ let rColor = 0, gColor = 0, bColor = 0;
 let rgbColor = 'rgb(255,255,255)';
 document.body.style.backgroundColor = rgbColor;
 
+let gudeF = false;
+let timerId = "";
+
+
 
 /**
  * Changcolor を押された時の処理
 */
 function changeColor() {
   console.log('Button clicked!'); // feel free to change/delete this line
+
+  if (gudeF === false) {
+    gudeF = true;
+    console.log("==colorChg now ==");
+    buttonElement.innerText = "Change Now";
+    buttonElement.style.backgroundColor = "yellow";
+    timerId = setInterval(() => { colorRun() }, 1000);
+  } else {
+    gudeF = false;
+    setTimeout(() => clearInterval(timerId), 1000);
+    console.log("==colorChg Stop ==");
+    buttonElement.innerText = "Change Stop";
+    buttonElement.style.backgroundColor = "white";
+  }
+}
+
+/**
+ * Changcolor の　実行処理
+*/
+function colorRun() {
   colorChg();
   document.body.style.backgroundColor = rgbColor;
-
 }
 
 /**

@@ -251,17 +251,17 @@ function each(arrAny, callbackFunc) {
   if (Array.isArray(arrAny) === true) {
     for (const num of arrAny) {
       // console.log(num);   //ここをコールバック関数にする
-      action(num);
+      callbackFunc(num);
     }
   } else {
     for (const key in arrAny) {
       // console.log(arrAny[key]);   //ここをコールバック関数にする
-      action(arrAny[key]);
+      callbackFunc(arrAny[key]);
     }
   }
-  function action(num) {
-    callbackFunc(num);
-  }
+  // function action(num) {
+  //   callbackFunc(num);
+  // }
 }
 
 each({ a: 1, b: 2, c: 3 }, console.log);

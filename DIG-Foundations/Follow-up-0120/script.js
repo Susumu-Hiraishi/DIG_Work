@@ -8,10 +8,9 @@ let rColor = 0, gColor = 0, bColor = 0;
 let rgbColor = 'rgb(255,255,255)';
 document.body.style.backgroundColor = rgbColor;
 
+//ボタン実行時、自動切り替えの為のフローバル変数
 let gudeF = false;
 let timerId = "";
-
-
 
 /**
  * Changcolor を押された時の処理
@@ -27,7 +26,7 @@ function changeColor() {
     timerId = setInterval(() => { colorRun() }, 1000);
   } else {
     gudeF = false;
-    setTimeout(() => clearInterval(timerId), 1000);
+    clearInterval(timerId);
     console.log("==colorChg Stop ==");
     buttonElement.innerText = "Change Stop";
     buttonElement.style.backgroundColor = "white";

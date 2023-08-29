@@ -78,9 +78,40 @@ for loop (iが一つずつインクリメントされるループ)
 // test(buildObject(["cat", "dog", "duck"], [null, 0, NaN]), { "cat": null, "dog": 0, "duck": NaN });
 // test(buildObject(["abc", "def", "ghi"], [[0, 1, 2], [3, 4, 5], [6, 7, 8]]), { "abc": [0, 1, 2], "def": [3, 4, 5], "ghi": [6, 7, 8] });
 
-function textChg(){
-  document.body.getElementsByTagName("h1")[0].innerText = "変えたぜ！"
+// function textChg(){
+//   document.body.getElementsByTagName("h1")[0].innerText = "変えたぜ！"
+// }
+
+// setTimeout(() => {textChg()},3000);
+
+
+
+function map(array) {
+  // console.log(typeof array);  //object
+  // console.log(Array.isArray(array));  //true
+  const result = [];
+  if (Array.isArray(array) === true) {
+    for (let i = 0; i < array.length; i++) {
+      result.push(addOne(array[i]));
+    }
+  } else if (Array.isArray(array) === false) { //←ここのelseの下と最後の｛の下に赤の波線が入ります。
+    for (const key in array) {
+      result.push(addOne(array[key]));
+    }
+  }
+  return result;
+}
+//====================================
+
+function addOne(num) {
+  return num + 1;
 }
 
-setTimeout(() => {textChg()},3000);
+map([1, 2, 3], addOne); // [2, 3, 4]
+map({ a: 1, b: 2, c: 3 }, addOne); // [2, 3, 4]
 
+console.log(map([1, 2, 3], addOne));
+console.log(map({ a: 1, b: 2, c: 3 }, addOne));
+
+test(map([1, 2, 3], addOne), [2, 3, 4]);
+test(map({ a: 1, b: 2, c: 3 }, addOne), [2, 3, 4]);

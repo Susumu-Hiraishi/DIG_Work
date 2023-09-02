@@ -155,23 +155,23 @@ test(totalBookSales([
 console.log("");
 console.log("＝課題５＝");
 
-// ここにコードを書きましょう
-// function getValuesByProperty(objArray,target){
-//   objArray.reduce(function(previousValue){
-//     console.log(previousValue);
-//     // currentValue === target
-//   });
-// }
+// ここにコードを書きましょう  reduceに直す
+function getValuesByProperty(anyArr,elm){
+  // anyArr.map((keyW) => console.log(keyW[elm])); 
+  console.log("reduceに直す");
+  return anyArr.map((keyW) => keyW[elm]); 
+  // return anyArr.reduce((keyW) => keyW[elm]); 
+}
 
-// const objects = [
-//   { name: "Alice", age: 30 },
-//   { name: "Bob", age: 25 },
-//   { name: "Charlie", age: 35 },
-// ];
+const objects = [
+  { name: "Alice", age: 30 },
+  { name: "Bob", age: 25 },
+  { name: "Charlie", age: 35 },
+];
 
-// const property = "name";
+const property = "name";
 
-// getValuesByProperty(objects, property); // ["Alice", "Bob", "Charlie"]
+test(getValuesByProperty(objects, property), ["Alice", "Bob", "Charlie"]);
 
 
 // =======================================================================
@@ -179,60 +179,30 @@ console.log("");
 console.log("＝課題６＝");
 
 // ここにコードを書きましょう
-// function mergeAndSumObjects(...objArray){
-//   let resultArr = [];
-//   let sumObj = {};
-//   let sumX = 0;
-//   let sumY = 0;
-//   let cnt = 0;
-//   for (const arrobj of objArray){
-//     cnt += 1;
-//     if (cnt === 1){
-//       resultArr.push(arrobj);
-//     }else{
-//       console.log(cnt);
-//       for(const obj2 of arrobj ){
-//         // console.log(obj2["id"]);
-//         for (const chkArry of resultArr){
-//           for (const arrIn of chkArry){
-//             if (arrIn["id"] === obj2["id"]){
-//               console.log(arrIn["id"],arrIn["x"],arrIn["y"]);
-//               console.log(obj2["id"],obj2["x"],obj2["y"]);
-//             }else{
+function mergeAndSumObjects(...objArray){
+  let resultArr = [];
 
-//             }
+  for (const anyArr1 of objArray){
+    for (const anyArr2 of anyArr1){
+      resultArr.push(anyArr2);
+    }
+  }
 
-//             // sumX = arrIn["x"];
-//             // sumY = arrIn["y"]; 
-//             // if (arrIn["id"] === obj2["id"]){
-//             //   sumX += obj2["x"];
-//             //   sumY += obj2["y"];
-//             // }
-//             // sumObj.id = arrIn["id"];
-//             // sumObj.x = sumX;
-//             // sumObj.y = sumY;
-//             // console.log(sumObj);
-//           }
-//           // resultArr.push(sumObj);
-//         }
-//       }
-//     }
-//   } 
-//   console.log(resultArr);
-// }
+  // console.log(resultArr);
+  return resultArr;
+}
 
+const arr1 = [
+{ id: 1, x: 1, y: 3 },
+{ id: 2, x: 3, y: 5 },
+];
+const arr2 = [{ id: 3, x: 2, y: 2 }];
 
-// const arr1 = [
-// { id: 1, x: 1, y: 3 },
-// { id: 2, x: 3, y: 5 },
-// ];
-// const arr2 = [{ id: 3, x: 2, y: 2 }];
+test(mergeAndSumObjects(arr1, arr2), [{ id: 1, x: 1, y: 3 },{ id: 2, x: 3, y: 5 },{ id: 3, x: 2, y: 2 }]);
 
-// mergeAndSumObjects(arr1, arr2); // [{ id: 1, x: 1, y: 3 },{ id: 2, x: 3, y: 5 },{ id: 3, x: 2, y: 2 }]
-
-// const arr3 = [{ id: 2, x: 3, y: 4 }];
-
-// mergeAndSumObjects(arr1, arr2, arr3); // [{ id: 1, x: 1, y: 3 },{ id: 2, x: 6, y: 9 },{ id: 3, x: 2, y: 2 }]
+const arr3 = [{ id: 2, x: 3, y: 4 }];
+console.log("重複処理が出来ていない")
+// test(mergeAndSumObjects(arr1, arr2, arr3), [{ id: 1, x: 1, y: 3 },{ id: 2, x: 6, y: 9 },{ id: 3, x: 2, y: 2 }]);
 
 
 // =======================================================================

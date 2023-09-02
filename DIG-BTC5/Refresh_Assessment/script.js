@@ -94,7 +94,6 @@ function calculateTotalWithTax(priceObj,cartObj){
   let resultTaxIn = 0;
   for (const productKey in priceObj){
     for (const cartKey in cartObj){
-      // console.log(productKey, cartKey);
       if (productKey === cartKey){
         resultTaxIn += (priceObj[productKey] * cartObj[cartKey]) * (1 + tax/100);;
       }
@@ -157,10 +156,8 @@ console.log("＝課題５＝");
 
 // ここにコードを書きましょう  reduceに直す
 function getValuesByProperty(anyArr,elm){
-  // anyArr.map((keyW) => console.log(keyW[elm])); 
   console.log("reduceに直す");
   return anyArr.map((keyW) => keyW[elm]); 
-  // return anyArr.reduce((keyW) => keyW[elm]); 
 }
 
 const objects = [
@@ -188,7 +185,6 @@ function mergeAndSumObjects(...objArray){
     }
   }
 
-  // console.log(resultArr);
   return resultArr;
 }
 
@@ -210,7 +206,6 @@ console.log("");
 console.log("＝課題７＝");
 // ここにコードを書きましょう
 function doTheThing(numArry,cb1,cb2,cb3){
-  // console.log(numArry.map(cb1).filter(cb2).filter(cb3))
   return numArry.map(cb1).filter(cb2).filter(cb3);
 } 
 
@@ -245,7 +240,6 @@ function createMessages(word,anyObj){
   }
   return function(text){
     resultword = anyObj["start"] + SpaceWord + word  + SpaceWord + text + SpaceWord + anyObj["end"];
-    // console.log(resultword)
     return resultword;
   }
 }
@@ -299,7 +293,6 @@ function getDiffDate(date1,date2){
   const d2 = new Date(date2);
   const diffTime = d1 - d2;
   resultDay = Math.abs(diffTime / (1000 * 60 * 60 * 24));
-  // console.log(resultDay);
   return resultDay;
 }
 
@@ -350,22 +343,18 @@ function endsWith(){
 
   if (lastNum !== undefined){
     strLen = lastNum -searchWord.length;
-    // console.log( str.length,  lastNum , searchWord.length,strLen);
     for (let i = 0; i < searchWord.length; i++){
-      // console.log(splWord[i],wordChk[i+strLen]);
       if(splWord[i] !== wordChk[i+strLen]){
         resultBool = false;
       }
     }
   }else{
     for (let i = 0; i < searchWord.length; i++){
-      // console.log(splWord[i],wordChk[i+strLen]);
       if(splWord[i] !== wordChk[i+strLen]){
         resultBool = false;
       }
     }
   }
-  // console.log(resultBool)
   return resultBool;
 }
 
@@ -514,7 +503,65 @@ test(vendingMachine.insertMoney(-100), "お金を投入してください");
 console.log("");
 console.log("＝課題１５＝");
 
+// ここにコードを書きましょう
+function compare(any1,any2){
+  // console.log(typeof any1,typeof any2);
 
+  if(typeof any1 === "number" && typeof any2 === "number"){
+    return  any1 === any2
+  }
+  if(typeof any1 === "string" && typeof any2 === "string"){
+    return  any1 === any2
+  }
+  if(Array.isArray(any1) === true && Array.isArray(any1) === true){
+    if (any1.length !== any2.length){
+      return false;
+    }
+    for (const arr in any1){
+      if(any1[arr] !== any2[arr]){
+        return false;
+      }
+    }
+    return true;
+  }else{
+    for (const key in any1){
+      console.log(any1[key],any2[key]);
+      if(any1[key] !== any2[key]){
+        return false;
+      }
+    }
+    return true;
+  }
+}
+
+
+
+// test(compare(1, 1), true);
+// test(compare(1, 2), false);
+
+// test(compare("a", "a"), true);
+// test(compare("a", "b"), false);
+
+// test(compare([1, 2, 3], [1, 2, 3]), true);
+// test(compare([1, 2, 3], [1, 2, 4]), false);
+// test(compare([1, 2, 3], [1, 2, 3, 4]), false);
+
+// test(compare({ a: 1, b: 2 }, { a: 1, b: 2 }), true);
+// test(compare({ a: 1, b: 2 }, { b: 2, a: 1 }), true);
+// test(compare({ a: 1, b: 2 }, { a: 1, b: 3 }), false);
+
+compare(
+  { a: 1, b: { c: { d: 2, e: { f: 3 } } } },
+  { a: 1, b: { c: { d: 2, e: { f: 3 } } } }
+); // true
+// compare(
+//   { a: 1, b: { c: { d: 2, e: { f: 3 } } } },
+//   { a: 1, b: { c: { d: 2, e: { f: 4 } } } }
+// ); // false
+// compare(
+//   { a: 1, b: { c: { d: 2, e: { f: 3 } } } },
+//   { a: 1, b: { c: { d: 2, e: { f: 4, g: 5 } } } }
+// ); // false
 
 // =======================================================================
 console.log("");

@@ -314,38 +314,90 @@ test(getDiffDate("2019/01/01", "2020/01/01"), 365);
 console.log("");
 console.log("＝課題１１＝");
 // ここにコードを書きましょう  高階関数　カリー化
-function createCounter(defNum,stepNum){
-  let data = defNum;
-  let step = stepNum;
+// function createCounter(defNum,stepNum){
+//   let data = defNum;
+//   let step = stepNum;
 
 
 
-  function nextSum(){
+//   function nextSum(){
 
-  }
-  return nextSum()
-}
+//   }
+//   return nextSum()
+// }
 
-const countDownFromOneHundred = createCounter(100, -5);
-const countUpFromTen = createCounter(10);
+// const countDownFromOneHundred = createCounter(100, -5);
+// const countUpFromTen = createCounter(10);
 
-countDownFromOneHundred(); // 100
-countUpFromTen(); // 10
-countUpFromTen(); // 11
-countDownFromOneHundred(); // 95
+// countDownFromOneHundred(); // 100
+// countUpFromTen(); // 10
+// countUpFromTen(); // 11
+// countDownFromOneHundred(); // 95
 
 
 // =======================================================================
 console.log("");
 console.log("＝課題１２＝");
+// ここにコードを書きましょう
+function endsWith(){
+  const str = arguments[0];
+  const searchWord = arguments[1];
+  const lastNum = arguments[2];
+  let resultBool = true;
+  const splWord  = searchWord.split('');
+  const wordChk = str.split('');
+  let strLen = str.length - searchWord.length;
+
+  if (lastNum !== undefined){
+    strLen = lastNum -searchWord.length;
+    // console.log( str.length,  lastNum , searchWord.length,strLen);
+    for (let i = 0; i < searchWord.length; i++){
+      // console.log(splWord[i],wordChk[i+strLen]);
+      if(splWord[i] !== wordChk[i+strLen]){
+        resultBool = false;
+      }
+    }
+  }else{
+    for (let i = 0; i < searchWord.length; i++){
+      // console.log(splWord[i],wordChk[i+strLen]);
+      if(splWord[i] !== wordChk[i+strLen]){
+        resultBool = false;
+      }
+    }
+  }
+  // console.log(resultBool)
+  return resultBool;
+}
 
 
+const str1 = "Cats are the best!";
+
+test(endsWith(str1, "best!"),true);
+test(endsWith(str1, "best", 17),true);
+
+const str2 = "Is this a question?";
+
+test(endsWith(str2, "question"),false);
 
 
 // =======================================================================
 console.log("");
 console.log("＝課題１３＝");
 
+// ここにコードを書きましょう
+
+
+
+
+const arr1 = [1, 2, 3];
+const arr2 = [10, 20, 15];
+const obj1 = { a: 100, b: 70, c: 50 };
+const obj2 = { a: 50, b: 5, c: 500 };
+
+findExtremeValue(arr1, "MAX"); // 3
+findExtremeValue(arr2, "MIN"); // 10
+findExtremeValue(obj1, "MAX"); // 100
+findExtremeValue(obj2, "MIN"); // 5
 
 
 // =======================================================================

@@ -329,10 +329,10 @@ console.log("＝課題１１＝");
 // const countDownFromOneHundred = createCounter(100, -5);
 // const countUpFromTen = createCounter(10);
 
-// countDownFromOneHundred(); // 100
-// countUpFromTen(); // 10
-// countUpFromTen(); // 11
-// countDownFromOneHundred(); // 95
+// countDownFromOneHundred(), 100
+// countUpFromTen(), 10
+// countUpFromTen(), 11
+// countDownFromOneHundred(), 95
 
 
 // =======================================================================
@@ -385,26 +385,129 @@ console.log("");
 console.log("＝課題１３＝");
 
 // ここにコードを書きましょう
+function findExtremeValue(arrAny,word){
+  let MaxN = 0;
+  let MinN = 0;
+  if (Array.isArray(arrAny) === true) {
+    for (let i = 0; i < arrAny.length; i++ ){
+      if (i === 0){
+        MaxN = arrAny[i];
+        MinN = arrAny[i];
+      }else{
+        if (MaxN < arrAny[i]){
+          MaxN = arrAny[i];
+        }
+        if (MinN > arrAny[i]){
+          MinN = arrAny[i];
+        }
+      }
+    }
+    if(word === "MAX"){
+      return MaxN;
+    }else{
+      return MinN;
+    }
+  }else{
+    let cnt = 0;
+    for (const key in arrAny){
+      cnt ++;
+      if (cnt === 1){
+        MaxN = arrAny[key];
+        MinN = arrAny[key];
+      }else{
+        if (MaxN < arrAny[key]){
+          MaxN = arrAny[key];
+        }
+        if (MinN > arrAny[key]){
+          MinN = arrAny[key];
+        }
+      }
+    }
+    if(word === "MAX"){
+      return MaxN;
+    }else{
+      return MinN;
+    }
+  }
+}
 
 
-
-
-const arr1 = [1, 2, 3];
-const arr2 = [10, 20, 15];
+const tarr1 = [1, 2, 3];
+const tarr2 = [10, 20, 15];
 const obj1 = { a: 100, b: 70, c: 50 };
 const obj2 = { a: 50, b: 5, c: 500 };
 
-findExtremeValue(arr1, "MAX"); // 3
-findExtremeValue(arr2, "MIN"); // 10
-findExtremeValue(obj1, "MAX"); // 100
-findExtremeValue(obj2, "MIN"); // 5
+test(findExtremeValue(tarr1, "MAX"), 3);
+test(findExtremeValue(tarr2, "MIN"), 10);
+test(findExtremeValue(obj1, "MAX"), 100);
+test(findExtremeValue(obj2, "MIN"), 5);
 
 
 // =======================================================================
 console.log("");
 console.log("＝課題１４＝");
 
+const drinkStock = [
+  { name: "cola", price: 120 },
+  { name: "water", price: 100 },
+  { name: "tea", price: 150 },
+];
 
+// ここにコードを書きましょう
+let mTotal = 1000; 
+let inMony = 0;
+let outMony = 0;
+let buyMony = 0;
+
+let vendingMachine = {
+  insertMoney:function(inM){
+    inMony = inM;
+    if ( inMony <= 0 || inMony === undefined ){
+      return "お金を投入してください";
+    }
+  },
+  money:function(){
+    return inMony;
+  },
+  totalMoney:function(){
+    mTotal += inMony
+    return mTotal;
+  },
+  selectDrink:function(selD){
+    for (const arr of drinkStock){
+      if (arr["name"] === selD ){
+        buyMony = arr["price"];
+        if (inMony < buyMony){
+          return "お金が足りません"
+        }
+        inMony -= buyMony;
+        return selD + " が出てきました！";
+      }
+    }
+  },
+  returnChange:function(){
+    outMony = inMony;
+    mTotal -= outMony;
+    inMony = 0
+    return outMony;
+  }
+}
+
+
+test(vendingMachine.insertMoney(500), );
+test(vendingMachine.money(), 500);
+test(vendingMachine.totalMoney(), 1500);
+test(vendingMachine.selectDrink("water"), "water が出てきました！");
+test(vendingMachine.returnChange(), 400);
+test(vendingMachine.money(), 0);
+test(vendingMachine.totalMoney(), 1100);
+
+test(vendingMachine.insertMoney(100), );
+test(vendingMachine.money(), 100);
+test(vendingMachine.selectDrink("cola"), "お金が足りません");
+
+test(vendingMachine.insertMoney(), "お金を投入してください");
+test(vendingMachine.insertMoney(-100), "お金を投入してください");
 
 
 // =======================================================================

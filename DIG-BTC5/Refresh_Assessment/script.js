@@ -155,9 +155,15 @@ console.log("");
 console.log("＝課題５＝");
 
 // ここにコードを書きましょう  reduceに直す
+// return anyArr.map((keyW) => keyW[elm]); 
+
 function getValuesByProperty(anyArr,elm){
-  console.log("reduceに直す");
-  return anyArr.map((keyW) => keyW[elm]); 
+  return anyArr.reduce((resultName,obj) => {
+    if (obj.hasOwnProperty(elm)){
+      resultName.push(obj[elm]);
+    }
+    return resultName;
+  },[]);
 }
 
 const objects = [
@@ -307,25 +313,23 @@ test(getDiffDate("2019/01/01", "2020/01/01"), 365);
 console.log("");
 console.log("＝課題１１＝");
 // ここにコードを書きましょう  高階関数　カリー化
-// function createCounter(defNum,stepNum){
-//   let data = defNum;
-//   let step = stepNum;
 
+function createCounter(defNum,step = 1) {
+  let data = defNum;
+  return function () {
+    const resultNum = data;
+    data += step
+    return (resultNum);
+  }
+}
+  
+const countDownFromOneHundred = createCounter(100, -5);
+const countUpFromTen = createCounter(10);
 
-
-//   function nextSum(){
-
-//   }
-//   return nextSum()
-// }
-
-// const countDownFromOneHundred = createCounter(100, -5);
-// const countUpFromTen = createCounter(10);
-
-// countDownFromOneHundred(), 100
-// countUpFromTen(), 10
-// countUpFromTen(), 11
-// countDownFromOneHundred(), 95
+test(countDownFromOneHundred(), 100);
+test(countUpFromTen(), 10);
+test(countUpFromTen(), 11);
+test(countDownFromOneHundred(), 95);
 
 
 // =======================================================================
@@ -529,6 +533,9 @@ function compare(any1,any2){
       if(any1[key] !== any2[key]){
         return false;
       }
+      // if(!compare(any1[key]),any2[key]){
+      //     return false
+      // }
     }
     return true;
   }
@@ -550,10 +557,10 @@ function compare(any1,any2){
 // test(compare({ a: 1, b: 2 }, { b: 2, a: 1 }), true);
 // test(compare({ a: 1, b: 2 }, { a: 1, b: 3 }), false);
 
-compare(
+test(compare(
   { a: 1, b: { c: { d: 2, e: { f: 3 } } } },
   { a: 1, b: { c: { d: 2, e: { f: 3 } } } }
-); // true
+), true);
 // compare(
 //   { a: 1, b: { c: { d: 2, e: { f: 3 } } } },
 //   { a: 1, b: { c: { d: 2, e: { f: 4 } } } }

@@ -574,6 +574,7 @@ test(compare(
 console.log("");
 console.log("＝課題１６＝");
 
+console.log("TEST")
 
 
 
